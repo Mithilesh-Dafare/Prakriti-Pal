@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Veda</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <script>
+      // Custom configuration for Tailwind to use our new fonts
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'sans': ['Inter', 'sans-serif'],
+              'serif': ['Playfair Display', 'serif'],
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-[#F8F7F4] font-sans">
+
+    <header id="main-header" class="sticky top-0 z-50 w-full transition-all duration-300">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/public/index.html" class="font-serif text-2xl font-bold text-gray-800">Veda</a>
+            <div class="flex items-center space-x-4">
+                 <a href="/public/register.html" class="bg-[#0A4D3C] text-white px-5 py-2 rounded-full hover:bg-green-800 transition">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex items-center justify-center py-20 px-6">
+        <div class="w-full max-w-md bg-white p-8 rounded-xl shadow-lg">
+            <h2 class="font-serif text-3xl font-bold text-center text-gray-800 mb-8">Login to Your Account</h2>
+            
+            <form id="login-form" class="space-y-6">
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                    <div class="mt-1">
+                        <input type="email" id="email" name="email" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500" required>
+                    </div>
+                </div>
+                
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                    <div class="mt-1">
+                        <input type="password" id="password" name="password" class="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-green-500 focus:border-green-500" required>
+                    </div>
+                </div>
+
+                <div>
+                    <button type="submit" class="w-full flex justify-center py-3 px-4 border border-transparent rounded-full shadow-sm text-base font-medium text-white bg-[#0A4D3C] hover:bg-green-800">
+                        Login
+                    </button>
+                </div>
+            </form>
+
+            <p class="text-center text-sm text-gray-600 mt-8">
+                Don't have an account?
+                <a href="/public/register.html" class="font-medium text-green-700 hover:text-green-600">
+                    Sign up here
+                </a>
+            </p>
+        </div>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Veda. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="login.js"></script>
+</body>
+</html>

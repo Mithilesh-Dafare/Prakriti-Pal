@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Herbal Encyclopedia - Veda</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = { theme: { extend: { fontFamily: { 'sans': ['Inter', 'sans-serif'], 'serif': ['Playfair Display', 'serif'] } } } }
+    </script>
+</head>
+<body class="bg-[#F8F7F4] font-sans">
+    <header id="main-header" class="sticky top-0 z-50 w-full transition-all duration-300">
+        </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <div class="max-w-3xl mx-auto text-center">
+            <h1 class="font-serif text-4xl md:text-5xl font-bold text-gray-800">Herbal Encyclopedia</h1>
+            <p class="mt-4 text-lg text-gray-600">Search for an herb to learn about its properties, benefits, and uses in Ayurveda.</p>
+        </div>
+
+        <form id="search-form" class="max-w-2xl mx-auto mt-10 flex">
+            <input type="search" id="search-input" placeholder="e.g., Ashwagandha" class="w-full px-4 py-3 border border-gray-300 rounded-l-full focus:ring-green-500 focus:border-green-500">
+            <button type="submit" class="bg-[#0A4D3C] text-white font-bold py-3 px-8 rounded-r-full hover:bg-green-800">Search</button>
+        </form>
+
+        <div id="result-container" class="max-w-4xl mx-auto mt-12">
+            </div>
+    </main>
+
+    <script src="main.js"></script>
+    <script src="herbs.js"></script>
+</body>
+</html>

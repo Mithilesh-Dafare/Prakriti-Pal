@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veda - The Ancient Science of Ayurveda</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+      // Custom configuration for Tailwind to use our new fonts
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'sans': ['Inter', 'sans-serif'],
+              'serif': ['Playfair Display', 'serif'],
+            }
+          }
+        }
+      }
+    </script>
+</head>
+
+<body class="bg-[#F8F7F4] font-sans">
+
+<header id="main-header" class="sticky top-0 z-50 w-full transition-all duration-300">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="/public/index.html" class="font-serif text-2xl font-bold text-gray-800">Veda</a>
+
+ <nav class="hidden md:flex items-center space-x-8" id="nav-links">
+    <a href="/public/index.html" class="nav-link ...">Home</a>
+    <a href="/public/quiz.html" class="nav-link ...">Prakriti Quiz</a>
+    <a href="/public/symptom-checker.html" class="nav-link ...">Symptom Checker</a>
+    <a href="/public/herbs.html" class="nav-link text-gray-600 hover:text-green-800">Herbs</a> <a href="/public/dashboard.html" id="dashboard-link" class="nav-link ...">Dashboard</a>
+</nav>
+
+        <div class="hidden md:flex items-center space-x-4">
+            <div id="auth-links-desktop">
+                <a href="/public/login.html" class="text-gray-600 hover:text-green-800">Login</a>
+                <a href="/public/register.html" class="bg-[#0A4D3C] text-white px-5 py-2 rounded-full hover:bg-green-800 transition">Sign Up</a>
+            </div>
+            <div id="user-menu-desktop" class="hidden items-center space-x-4">
+                <span class="text-gray-700">Welcome, <span id="nav-user-name" class="font-semibold"></span>!</span>
+                <button id="logout-btn-desktop" class="bg-red-600 text-white px-5 py-2 rounded-full hover:bg-red-700 transition">Logout</button>
+            </div>
+        </div>
+
+        <div class="md:hidden">
+            <button id="menu-btn" class="text-gray-800 focus:outline-none">
+                </button>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+        </div>
+</header>
+
+    <main>
+        <section class="relative container mx-auto px-6 py-16 text-center">
+            <div class="absolute inset-0 z-0 opacity-10" style="background-image: url('https://www.transparentpng.com/thumb/leaves/V5I86G-green-leaves-background.png'); background-size: cover; background-position: center;"></div>
+            
+            <div class="relative z-10 flex flex-col items-center">
+                <h1 class="font-serif text-5xl md:text-7xl font-bold text-gray-800 leading-tight">
+                    The Ancient Science of <br> Ayurveda For Your Modern Life.
+                </h1>
+                <p class="mt-4 max-w-2xl text-gray-600 text-lg">
+                    Discover personalized wellness routines, herbal remedies, and dietary recommendations tailored to your unique mind-body constitution.
+                </p>
+                <a href="#products" class="mt-8 bg-[#0A4D3C] text-white px-8 py-3 rounded-full hover:bg-green-800 transition font-semibold flex items-center space-x-2">
+                    <span>Explore Products</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                </a>
+                <!-- <img src="https://i.imgur.com/gYAlA2m.png" alt="Ayurvedic Products" class="mt-12 max-w-3xl mx-auto"> -->
+            </div>
+        </section>
+
+        <section id="products" class="py-20 bg-white">
+            <div class="container mx-auto px-6">
+                <h2 class="font-serif text-4xl font-bold text-center text-gray-800 mb-12">Our Bestselling Products</h2>
+                
+                <div id="herbs-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col">
+                        <img src="https://m.media-amazon.com/images/I/41U1Uz5Q9HL._UF1000,1000_QL80_.jpg" alt="Product Image" class="w-full h-56 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <h3 class="font-semibold text-xl text-gray-800">Ashwagandha</h3>
+                            <p class="text-gray-600 mt-2 flex-grow">An adaptogen that helps the body manage stress and improves strength.</p>
+                            <div class="mt-4 flex justify-between items-center">
+                                <span class="font-bold text-xl text-gray-900">$19.99</span>
+                                <button class="bg-[#0A4D3C] text-white px-4 py-2 rounded-full hover:bg-green-800 transition">Add to Cart</button>
+                            </div>
+                        </div>
+                    </div>
+                     </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Veda. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

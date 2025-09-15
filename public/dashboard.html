@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Dashboard - Veda</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <script>
+      // Custom configuration for Tailwind to use our new fonts
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'sans': ['Inter', 'sans-serif'],
+              'serif': ['Playfair Display', 'serif'],
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-[#F8F7F4] font-sans">
+
+<header id="main-header" class="sticky top-0 z-50 w-full transition-all duration-300">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="/public/index.html" class="font-serif text-2xl font-bold text-gray-800">Veda</a>
+
+<nav class="hidden md:flex items-center space-x-8" id="nav-links">
+    <a href="/public/index.html" class="nav-link ...">Home</a>
+    <a href="/public/quiz.html" class="nav-link ...">Prakriti Quiz</a>
+    <a href="/public/symptom-checker.html" class="nav-link ...">Symptom Checker</a>
+    <a href="/public/herbs.html" class="nav-link text-gray-600 hover:text-green-800">Herbs</a> <a href="/public/dashboard.html" id="dashboard-link" class="nav-link ...">Dashboard</a>
+</nav>
+
+        <div class="hidden md:flex items-center space-x-4">
+            <div id="auth-links-desktop">
+                <a href="/public/login.html" class="text-gray-600 hover:text-green-800">Login</a>
+                <a href="/public/register.html" class="bg-[#0A4D3C] text-white px-5 py-2 rounded-full hover:bg-green-800 transition">Sign Up</a>
+            </div>
+            <div id="user-menu-desktop" class="hidden items-center space-x-4">
+                <span class="text-gray-700">Welcome, <span id="nav-user-name" class="font-semibold"></span>!</span>
+                <button id="logout-btn-desktop" class="bg-red-600 text-white px-5 py-2 rounded-full hover:bg-red-700 transition">Logout</button>
+            </div>
+        </div>
+
+        <div class="md:hidden">
+            <button id="menu-btn" class="text-gray-800 focus:outline-none">
+                </button>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+        </div>
+</header>
+    
+    <main class="container mx-auto px-6 py-12">
+        <h1 class="font-serif text-4xl font-bold text-gray-800">Welcome back, <span id="welcome-name">User</span>!</h1>
+        
+        <div class="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <div class="lg:col-span-1">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-xl font-bold text-gray-800">Your Profile</h2>
+                    <div class="mt-4 space-y-2">
+                        <p><strong>Name:</strong> <span id="user-name"></span></p>
+                        <p><strong>Email:</strong> <span id="user-email"></span></p>
+                    </div>
+                    <div class="mt-6">
+                        <h3 class="text-lg font-semibold text-gray-700">Your Prakriti</h3>
+                        <div id="prakriti-badge" class="mt-2 text-center bg-green-100 text-green-800 text-2xl font-bold p-4 rounded-lg">
+                            </div>
+                        <a href="/public/quiz.html" class="mt-4 block text-center w-full bg-gray-200 text-gray-800 py-2 rounded-lg hover:bg-gray-300">Retake the Quiz</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-2">
+                <div id="recommendations-container" class="hidden">
+                     <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h2 class="text-xl font-bold text-gray-800 mb-4">Your Personalized Plan</h2>
+                        <div class="space-y-6">
+                            <div>
+                                <h3 class="font-semibold text-lg text-green-800 mb-2">🌿 Dietary Recommendations</h3>
+                                <ul id="diet-recommendations" class="list-disc list-inside space-y-2 text-gray-700">
+                                    </ul>
+                            </div>
+                            <div>
+                                <h3 class="font-semibold text-lg text-blue-800 mb-2">☀️ Lifestyle Tips</h3>
+                                <ul id="lifestyle-recommendations" class="list-disc list-inside space-y-2 text-gray-700">
+                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="no-recommendations-card" class="hidden bg-white p-8 rounded-lg shadow-md text-center">
+                    <h2 class="text-xl font-bold text-gray-800">Unlock Your Personalized Plan</h2>
+                    <p class="mt-2 text-gray-600">Your diet and lifestyle recommendations will appear here once you complete the Prakriti analysis.</p>
+                    <a href="/public/quiz.html" class="mt-6 inline-block bg-[#0A4D3C] text-white font-bold py-3 px-6 rounded-full hover:bg-green-800">Take the Quiz Now</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="dashboard.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

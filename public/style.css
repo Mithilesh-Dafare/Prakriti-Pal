@@ -1,0 +1,36 @@
+/* Import Tailwind CSS - Add this to the <head> of your HTML files */
+/* <script src="https://cdn.tailwindcss.com"></script> */
+
+body {
+    font-family: sans-serif;
+    background-color: #f9fafb;
+}
+
+/* Styles for Herb Cards on index.html */
+#herbs-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+.herb-card {
+    background-color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    padding: 1.5rem;
+    transition: transform 0.2s;
+}
+
+.herb-card:hover {
+    transform: translateY(-5px);
+}
+
+.header-scrolled {
+    background-color: rgba(248, 247, 244, 0.9); /* A semi-transparent version of your body background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    backdrop-filter: blur(8px); /* Optional: creates a nice frosted glass effect */
+    -webkit-backdrop-filter: blur(8px);
+}
+
+/* You can add more specific styles for the quiz if needed, but Tailwind in quiz.html handles most of it. */

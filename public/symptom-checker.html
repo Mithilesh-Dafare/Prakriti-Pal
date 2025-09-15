@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symptom Checker - Veda</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    
+    <script>
+      // Custom configuration for Tailwind to use our new fonts
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'sans': ['Inter', 'sans-serif'],
+              'serif': ['Playfair Display', 'serif'],
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-[#F8F7F4] font-sans">
+
+    <header class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <a href="/public/index.html" class="font-serif text-2xl font-bold text-gray-800">Veda</a>
+<nav class="hidden md:flex items-center space-x-8" id="nav-links">
+    <a href="/public/index.html" class="nav-link ...">Home</a>
+    <a href="/public/quiz.html" class="nav-link ...">Prakriti Quiz</a>
+    <a href="/public/symptom-checker.html" class="nav-link ...">Symptom Checker</a>
+    <a href="/public/herbs.html" class="nav-link text-gray-600 hover:text-green-800">Herbs</a> <a href="/public/dashboard.html" id="dashboard-link" class="nav-link ...">Dashboard</a>
+</nav>
+        <div class="flex items-center space-x-4">
+            <a href="/public/dashboard.html" class="text-gray-600 hover:text-green-800">Dashboard</a>
+            <button id="logout-btn" class="bg-[#0A4D3C] text-white px-5 py-2 rounded-full hover:bg-green-800 transition hidden">Logout</button>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+        <div class="max-w-3xl mx-auto text-center">
+            <h1 class="font-serif text-4xl md:text-5xl font-bold text-gray-800">Symptom Checker</h1>
+            <p class="mt-4 text-lg text-gray-600">Select the symptoms you're currently experiencing. We'll analyze them to suggest your likely doshic imbalance and recommend supportive herbs.</p>
+        </div>
+
+        <form id="symptom-form" class="max-w-4xl mx-auto mt-12">
+            <div id="symptoms-checklist" class="flex flex-wrap justify-center gap-4 mb-10">
+                </div>
+            <div class="text-center">
+                <button type="submit" class="bg-[#0A4D3C] text-white font-bold py-4 px-10 rounded-full hover:bg-green-800 transition text-lg">Analyze My Symptoms</button>
+            </div>
+        </form>
+
+        <div id="result-container" class="hidden max-w-3xl mx-auto mt-12 bg-white p-8 rounded-xl shadow-md">
+            </div>
+    </main>
+
+    <script src="symptom-checker.js"></script>
+</body>
+</html>
