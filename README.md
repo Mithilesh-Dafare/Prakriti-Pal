@@ -1,0 +1,2 @@
+# Prakriti-Pal
+Ayurveda Project
